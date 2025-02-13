@@ -1,13 +1,52 @@
-<div class="header">
-  <h1>Jonathon's Dice Rolling Simulator</h1>
-</div>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Futura Font Example</title>
+    <style>
+        /* Add @font-face rules here if using local fonts */
+        
+        .header {
+            font-family: 'Futura', Arial, sans-serif;
+            background-color: #ADD8E6; /* Light blue background */
+            padding: 10px; /* Adds some space around the text */
+            text-align: left; /* Left align the text */
+        }
+        
+        .header h1 {
+            font-weight: bold; /* Makes the font bold */
+            color: #000; /* Black text color */
+        }
+        
+        .result {
+            font-size: 18px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>Jonathon's Online Craps Table</h1>
+    </div>
+  
+    <% die1 = rand(1..6) %>
+    <% die2 = rand(1..6) %>
+    <% total = die1 + die2 %>
 
-<% die1 = rand(1..6)
+    <img src="/images/dice/<%= die1 %>.svg" alt="">
+    <img src="/images/dice/<%= die2 %>.svg" alt="">
 
-die2 = rand(1..6)
+    <p>You rolled a <%= die1 %> and a <%= die2 %>. The total is <%= total %>.</p>
 
-total = die1+die2 %>
+    <% if total == 7 || total == 11 %>
+        <p class="result">Natural! You win!</p>
+    <% elsif total == 2 || total == 3 || total == 12 %>
+        <p class="result">Craps! You lose.</p>
+    <% else %>
+        <p class="result">The point is <%= total %>. Roll again to try and hit the point.</p>
+    <% end %>
 
-<p>You rolled a <%= die1 %> and a <%= die2 %>. The total is <%= total %>.</p>
-
-<button onclick="window.location.href='/roll_dice'">Roll Again</button>
+    <button onclick="window.location.href='/roll_dice'">Roll Again</button>
+</body>
+</html>
