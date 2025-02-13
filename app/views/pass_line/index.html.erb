@@ -30,27 +30,23 @@
         <h1>Jonathon's Online Craps Table</h1>
     </div>
 
+<p> Playing the pass line <p>
 
-<p>Do you want to play the pass line or don't pass line?</p>
+    <% die1 = rand(1..6) %>
+    <% die2 = rand(1..6) %>
+    <% total = die1 + die2 %>
 
-<%= form_tag do %>
-  <%= radio_button_tag :bet_type, 'pass_line', true %> Pass Line
-  <%= radio_button_tag :bet_type, 'dont_pass_line' %> Don't Pass Line
-  <%= submit_tag 'Start Rolling' %>
-<% end %>
+    <img src="/images/dice/<%= die1 %>.svg" alt="">
+    <img src="/images/dice/<%= die2 %>.svg" alt="">
 
-<script>
-  document.addEventListener('DOMContentLoaded', function() {
-    const form = document.querySelector('form');
-    form.addEventListener('submit', function(event) {
-      event.preventDefault();
-      const betType = document.querySelector('input[name="bet_type"]:checked').value;
-      if (betType === 'pass_line') {
-        window.location.href = '/pass_line';
-      } else {
-        window.location.href = '/dont_pass_line';
-      }
-    });
-  });
-</script>
+    <p>You rolled a <%= die1 %> and a <%= die2 %>. The total is <%= total %>.</p>
 
+    <% if total == 7 || total == 11 %>
+        <p class="result">Natural! You win!</p>
+    <% elsif total == 2 || total == 3 || total == 12 %>
+        <p class="result">Craps! You lose.</p>
+    <% else %>
+        <p class="result">The point is <%= total %>. Roll again to try and hit the point.</p>
+    <% end %>
+
+    <button onclick="window.location.href='/roll_dice'">Roll Again</button>
