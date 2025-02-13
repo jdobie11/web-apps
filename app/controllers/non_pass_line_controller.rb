@@ -1,0 +1,2 @@
+class NonPassLineController < ApplicationController
+end

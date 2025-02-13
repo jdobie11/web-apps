@@ -1,0 +1,2 @@
+class PlaceBetController < ApplicationController
+end
