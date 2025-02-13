@@ -1,0 +1,13 @@
+<div class="header">
+  <h1>Jonathon's Dice Rolling Simulator</h1>
+</div>
+
+<% die1 = rand(1..6)
+
+die2 = rand(1..6)
+
+total = die1+die2 %>
+
+<p>You rolled a <%= die1 %> and a <%= die2 %>. The total is <%= total %>.</p>
+
+<button onclick="window.location.href='/roll_dice'">Roll Again</button>
