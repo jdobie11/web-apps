@@ -7,4 +7,5 @@ Rails.application.routes.draw do
   get("/place_bet", :controller => "place_bet", :action => "index")
   get("/pass_line", :controller => "pass_line", :action => "index")
   get("/non_pass_line", :controller => "non_pass_line", :action => "index")
+  get("/companies", :controller => "companies", :action => "index")
 end
