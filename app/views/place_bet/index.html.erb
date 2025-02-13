@@ -32,6 +32,10 @@
 
 
 <p>Do you want to play the pass line or don't pass line?</p>
+<p>In craps, there are several bets you can make. The most common ones for beginners are the "Pass Line" and "Don't Pass" bets.<p>
+
+<p>Pass Line: This bet is made before the initial roll (come-out roll). If the result is 7 or 11, you win. If it's 2, 3, or 12, you lose. Any other number becomes the "point," and the game continues.<p>
+<p>Don't Pass: This is the opposite of Pass Line. If the result is 2 or 3, you win. If it's 7 or 11, you lose. If it's 12, it's a push (tie), and you get your bet back. Any other number becomes the "point," and the game continues.<p>
 
 <%= form_tag do %>
   <%= radio_button_tag :bet_type, 'pass_line', true %> Pass Line
@@ -54,3 +58,14 @@
   });
 </script>
 
+
+<h1> Pass Line <h1>
+<p>Win Probability: You are expected to win a Pass Line bet about 49.29% of the time on the come-out roll.<p>
+<p>Expected Return: For every $100 bet, you can expect to get back approximately $98.594. <p>
+
+<h1> Don't Pass Line <h1>
+<p>Win Probability: You are expected to win a Don't Pass bet about 47.93% of the time on the come-out roll.
+Expected Return: For every $100 bet, you can expect to get back approximately $98.644. <p>
+
+<p> Key Points <p>
+<p> Don't pass has slightly better odds than pass line <p>
